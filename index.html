@@ -211,7 +211,7 @@ function render(){
  h+=`<div class="brk">🏆 ${time(end)} — урочиста церемонія нагородження</div>`;
  document.getElementById('list').innerHTML=h;
  const tb=(T,title,lab)=>`<div class="card"><h2>${title}</h2><table><tr><th>#</th><th class="l">Команда</th><th>І</th><th>В</th><th>Н</th><th>П</th><th>М</th><th>О</th></tr>${T.r.map((x,j)=>`<tr><td>${j+1}</td><td class="l">${x.i!=null?tw(x.i,16):'<span class=n>'+(lab[j]||'')+'</span>'}</td><td>${x.gp}</td><td>${x.w}</td><td>${x.d}</td><td>${x.l}</td><td>${x.f}–${x.a}</td><td>${x.p}</td></tr>`).join('')}</table></div>`;
- let th=`<div class="card"><h2>Команди</h2><div class="gal">${S.teams.map((t,i)=>{const g=GS.findIndex(x=>i>=x.st&&i<x.st+x.n);return `<div class="tc"><div class="row">${crest(i,56)}${flagSvg(t,80)}</div><b>${tm(i)}</b>${S.G>1?`<div class="n">Група ${GL[g]}</div>`:''}</div>`}).join('')}</div></div>`;
+ let th=`<div class="card"><h2>Команди</h2><div class="gal">${S.teams.map((t,i)=>{const g=GS.findIndex(x=>i>=x.st&&i<x.st+x.n);return `<div class="tc"><div class="row">${crest(i,64)}</div><b>${tm(i)}</b>${S.G>1?`<div class="n">Група ${GL[g]}</div>`:''}</div>`}).join('')}</div></div>`;
  th+=GT.map((T,g)=>tb(T,S.G>1?`<span class="tag g${g}">${GL[g]}</span> Група ${GL[g]}`:'Турнірна таблиця',[])).join('');
  LTT.forEach(T=>th+=tb(T,T.L.nm,T.L.refs.map(refLbl)));
  document.getElementById('tables').innerHTML=th;
